@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camarote N40 — Confirmar Presença</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --verde:  #1B4332;
+    --verde2: #2D6A4F;
+    --rosa:   #C2185B;
+    --rosa2:  #E91E8C;
+    --dourado:#C9A84C;
+    --creme:  #F5F0E8;
+    --texto:  #1a1a1a;
+  }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--creme);
+    color: var(--texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Faixa decorativa topo */
+  .faixa-topo {
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, var(--verde) 0%, var(--dourado) 50%, var(--rosa) 100%);
+  }
+
+  /* Header */
+  .header {
+    width: 100%;
+    max-width: 520px;
+    padding: 2.5rem 1.5rem 1.5rem;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin-bottom: 0.5rem;
+  }
+
+  .titulo-n40 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--verde);
+    line-height: 1;
+    text-shadow: 3px 3px 0 var(--dourado);
+    letter-spacing: -2px;
+  }
+
+  .titulo-nauber {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--rosa);
+    margin-top: -0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .subtitulo {
+    font-size: 13px;
+    color: var(--verde2);
+    letter-spacing: 0.08em;
+    font-weight: 300;
+  }
+
+  .divisor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 1.25rem auto;
+    max-width: 260px;
+  }
+  .divisor::before, .divisor::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--dourado);
+  }
+  .divisor span {
+    color: var(--dourado);
+    font-size: 16px;
+  }
+
+  /* Info evento */
+  .info-evento {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+  .info-item {
+    text-align: center;
+  }
+  .info-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rosa);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .info-valor {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--verde);
+  }
+
+  /* Card principal */
+  .card {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 1rem 2rem;
+    background: #fff;
+    border-radius: 16px;
+    border: 1.5px solid var(--dourado);
+    overflow: hidden;
+  }
+
+  .card-header {
+    background: var(--verde);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--dourado);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--verde);
+    flex-shrink: 0;
+  }
+
+  .card-header-text .saudacao {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .card-header-text .responsavel {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .card-body { padding: 1.5rem; }
+
+  .instrucao {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+
+  /* Linha de convidado */
+  .convidado-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 0.5px solid #eee;
+    gap: 12px;
+  }
+  .convidado-row:last-child { border-bottom: none; }
+
+  .convidado-info { flex: 1; }
+  .convidado-nome {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--verde);
+  }
+  .convidado-faixa {
+    font-size: 11px;
+    color: #888;
+    margin-top: 1px;
+  }
+
+  /* Toggle Sim/Não */
+  .toggle-group {
+    display: flex;
+    border: 1.5px solid var(--dourado);
+    border-radius: 30px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .toggle-group input[type=radio] { display: none; }
+  .toggle-group label {
+    padding: 7px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    color: #888;
+    background: transparent;
+    letter-spacing: 0.04em;
+  }
+  .toggle-group input[value="sim"]:checked + label {
+    background: var(--verde);
+    color: #fff;
+  }
+  .toggle-group input[value="nao"]:checked + label {
+    background: var(--rosa);
+    color: #fff;
+  }
+
+  /* Botão confirmar */
+  .btn-confirmar {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 15px;
+    background: var(--rosa);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+  }
+  .btn-confirmar:hover { background: var(--rosa2); }
+  .btn-confirmar:active { transform: scale(0.98); }
+
+  /* Tela de sucesso */
+  .sucesso {
+    display: none;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+  .sucesso-icone {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--verde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 28px;
+  }
+  .sucesso h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--verde);
+    margin-bottom: 0.5rem;
+  }
+  .sucesso p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* Rodapé */
+  .rodape {
+    text-align: center;
+    padding: 1rem;
+    font-size: 11px;
+    color: #aaa;
+    letter-spacing: 0.05em;
+  }
+
+  .faixa-base {
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--rosa) 0%, var(--dourado) 50%, var(--verde) 100%);
+    margin-top: auto;
+  }
+
+  @media (max-width: 480px) {
+    .titulo-n40 { font-size: 3.5rem; }
+    .card { margin: 0 0.75rem 1.5rem; }
+    .toggle-group label { padding: 7px 14px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="faixa-topo"></div>
+
+<div class="header">
+  <p class="eyebrow">Convite especial &mdash; Camarote</p>
+  <div class="titulo-n40">N40</div>
+  <div class="titulo-nauber">Nauber</div>
+  <p class="subtitulo">40 anos &bull; Vamos celebrar</p>
+  <div class="divisor"><span>✦</span></div>
+  <div class="info-evento">
+    <div class="info-item">
+      <span class="info-label">Data</span>
+      <span class="info-valor">15/08/2026 &mdash; Sábado</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">Horário</span>
+      <span class="info-valor">17h às 22h</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">Local</span>
+      <span class="info-valor">Casa Maria Rosa &mdash; Jardim França</span>
+    </div>
+  </div>
+  <div class="divisor"><span>✦</span></div>
+</div>
+
+<div class="card" id="card-confirmacao">
+  <div class="card-header">
+    <div class="avatar" id="avatar-iniciais">N</div>
+    <div class="card-header-text">
+      <div class="saudacao">Confirmar presença</div>
+      <div class="responsavel" id="nome-responsavel">Convidado</div>
+    </div>
+  </div>
+  <div class="card-body">
+    <p class="instrucao" id="texto-instrucao">Confirme a presença de cada pessoa do seu grupo:</p>
+    <div id="lista-convidados"></div>
+    <button class="btn-confirmar" onclick="confirmar()">Confirmar presenças</button>
+  </div>
+
+  <div class="sucesso" id="tela-sucesso">
+    <div class="sucesso-icone">🎉</div>
+    <h2>Confirmado!</h2>
+    <p>Sua presença foi registrada com sucesso.<br>Mal podemos esperar para celebrar juntos!</p>
+  </div>
+</div>
+
+<p class="rodape">Av. Água Fria, 1608 &mdash; Jardim França &mdash; Casa Maria Rosa</p>
+<div class="faixa-base"></div>
+
+<script>
+const grupos = {
+  "nauber": {
+    responsavel: "Nauber",
+    membros: [{ num: 1, nome: "Nauber", faixa: "Adulto" }]
+  },
+  "vanessa": {
+    responsavel: "Vanessa",
+    membros: [
+      { num: 2, nome: "Vanessa", faixa: "Adulto" },
+      { num: 3, nome: "Maria Júlia", faixa: "Criança 7-10" }
+    ]
+  },
+  "elica": {
+    responsavel: "Elica",
+    membros: [
+      { num: 4, nome: "Elica", faixa: "Adulto" },
+      { num: 5, nome: "Amaury", faixa: "Adulto" },
+      { num: 6, nome: "Nauê", faixa: "Adulto" }
+    ]
+  }
+};
+
+function faixaLabel(f) {
+  if (f === "Criança 7-10") return "Criança (7–10 anos)";
+  if (f === "Criança até 6") return "Criança (até 6 anos)";
+  return "";
+}
+
+function iniciais(nome) {
+  return nome.split(" ").map(n => n[0]).slice(0,2).join("").toUpperCase();
+}
+
+const params = new URLSearchParams(window.location.search);
+const chave = (params.get("grupo") || "nauber").toLowerCase();
+const grupo = grupos[chave] || grupos["nauber"];
+
+document.getElementById("nome-responsavel").textContent = grupo.responsavel;
+document.getElementById("avatar-iniciais").textContent = iniciais(grupo.responsavel);
+
+if (grupo.membros.length === 1) {
+  document.getElementById("texto-instrucao").textContent = "Você vai comparecer à festa?";
+}
+
+const lista = document.getElementById("lista-convidados");
+grupo.membros.forEach((m, i) => {
+  const fx = faixaLabel(m.faixa);
+  lista.innerHTML += `
+    <div class="convidado-row">
+      <div class="convidado-info">
+        <div class="convidado-nome">${m.nome}</div>
+        ${fx ? `<div class="convidado-faixa">${fx}</div>` : ""}
+      </div>
+      <div class="toggle-group">
+        <input type="radio" name="resp_${m.num}" id="sim_${m.num}" value="sim">
+        <label for="sim_${m.num}">Sim</label>
+        <input type="radio" name="resp_${m.num}" id="nao_${m.num}" value="nao">
+        <label for="nao_${m.num}">Não</label>
+      </div>
+    </div>`;
+});
+
+function confirmar() {
+  const respostas = grupo.membros.map(m => {
+    const sel = document.querySelector(`input[name="resp_${m.num}"]:checked`);
+    return { num: m.num, nome: m.nome, resposta: sel ? sel.value : null };
+  });
+
+  const naorespondidos = respostas.filter(r => !r.resposta);
+  if (naorespondidos.length > 0) {
+    alert(`Por favor, responda para: ${naorespondidos.map(r => r.nome).join(", ")}`);
+    return;
+  }
+
+  document.getElementById("lista-convidados").style.display = "none";
+  document.querySelector(".btn-confirmar").style.display = "none";
+  document.querySelector(".instrucao").style.display = "none";
+  document.getElementById("tela-sucesso").style.display = "block";
+}
+</script>
+</body>
+</html>

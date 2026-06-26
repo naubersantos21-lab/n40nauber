@@ -510,7 +510,9 @@ grupo.membros.forEach((m, i) => {
     </div>`;
 });
 
-function confirmar() {
+const WEBHOOK = "https://hook.us2.make.com/csa7lw8h9uroifoieh8u98r9bmtwkswk";
+
+async function confirmar() {
   const respostas = grupo.membros.map(m => {
     const sel = document.querySelector(`input[name="resp_${m.num}"]:checked`);
     return { num: m.num, nome: m.nome, resposta: sel ? sel.value : null };
@@ -522,8 +524,29 @@ function confirmar() {
     return;
   }
 
+  const btn = document.querySelector(".btn-confirmar");
+  btn.textContent = "Enviando...";
+  btn.disabled = true;
+
+  const payload = {
+    responsavel: grupo.responsavel,
+    grupo: chave,
+    timestamp: new Date().toISOString(),
+    respostas: respostas
+  };
+
+  try {
+    await fetch(WEBHOOK, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+  } catch(e) {
+    console.error("Erro ao enviar:", e);
+  }
+
   document.getElementById("lista-convidados").style.display = "none";
-  document.querySelector(".btn-confirmar").style.display = "none";
+  btn.style.display = "none";
   document.querySelector(".instrucao").style.display = "none";
   document.getElementById("tela-sucesso").style.display = "block";
 }

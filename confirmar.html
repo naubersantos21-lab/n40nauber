@@ -452,13 +452,26 @@
 const grupos = {
   "nauber": {
     responsavel: "Nauber",
-    membros: [{ num: 1, nome: "Nauber", faixa: "Adulto" }]
+    membros: [
+      { num: 1, nome: "Nauber", faixa: "Adulto" },
+      { num: 2, nome: "Vanessa", faixa: "Adulto" },
+    ]
   },
   "vanessa": {
     responsavel: "Vanessa",
     membros: [
+      { num: 1, nome: "Nauber", faixa: "Adulto" },
       { num: 2, nome: "Vanessa", faixa: "Adulto" },
-      { num: 3, nome: "Maria Júlia", faixa: "Criança 7-10" }
+      { num: 3, nome: "Maria Júlia", faixa: "Criança 7-10" },
+      { num: 8, nome: "Tatiane", faixa: "Adulto" },
+    ]
+  },
+  "tatiane": {
+    responsavel: "Tatiane",
+    membros: [
+      { num: 2, nome: "Vanessa", faixa: "Adulto" },
+      { num: 7, nome: "Clelio", faixa: "Adulto" },
+      { num: 8, nome: "Tatiane", faixa: "Adulto" },
     ]
   },
   "elica": {
@@ -466,9 +479,15 @@ const grupos = {
     membros: [
       { num: 4, nome: "Elica", faixa: "Adulto" },
       { num: 5, nome: "Amaury", faixa: "Adulto" },
-      { num: 6, nome: "Nauê", faixa: "Adulto" }
+      { num: 6, nome: "Nauê", faixa: "Adulto" },
     ]
-  }
+  },
+  "clelio": {
+    responsavel: "Clelio",
+    membros: [
+      { num: 7, nome: "Clelio", faixa: "Adulto" },
+    ]
+  },
 };
 
 function faixaLabel(f) {

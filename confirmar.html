@@ -450,31 +450,20 @@
 
 <script>
 const grupos = {
-  "nauber": {
+  "1-nauber": {
     responsavel: "Nauber",
     membros: [
       { num: 1, nome: "Nauber", faixa: "Adulto" },
-      { num: 2, nome: "Vanessa", faixa: "Adulto" },
     ]
   },
-  "vanessa": {
+  "2-vanessa": {
     responsavel: "Vanessa",
     membros: [
-      { num: 1, nome: "Nauber", faixa: "Adulto" },
       { num: 2, nome: "Vanessa", faixa: "Adulto" },
       { num: 3, nome: "Maria Júlia", faixa: "Criança 7-10" },
-      { num: 8, nome: "Tatiane", faixa: "Adulto" },
     ]
   },
-  "tatiane": {
-    responsavel: "Tatiane",
-    membros: [
-      { num: 2, nome: "Vanessa", faixa: "Adulto" },
-      { num: 7, nome: "Clelio", faixa: "Adulto" },
-      { num: 8, nome: "Tatiane", faixa: "Adulto" },
-    ]
-  },
-  "elica": {
+  "4-elica": {
     responsavel: "Elica",
     membros: [
       { num: 4, nome: "Elica", faixa: "Adulto" },
@@ -482,10 +471,581 @@ const grupos = {
       { num: 6, nome: "Nauê", faixa: "Adulto" },
     ]
   },
-  "clelio": {
+  "5-amaury": {
+    responsavel: "Amaury",
+    membros: [
+      { num: 4, nome: "Elica", faixa: "Adulto" },
+      { num: 5, nome: "Amaury", faixa: "Adulto" },
+      { num: 6, nome: "Nauê", faixa: "Adulto" },
+    ]
+  },
+  "6-naue": {
+    responsavel: "Nauê",
+    membros: [
+      { num: 4, nome: "Elica", faixa: "Adulto" },
+      { num: 5, nome: "Amaury", faixa: "Adulto" },
+      { num: 6, nome: "Nauê", faixa: "Adulto" },
+    ]
+  },
+  "7-clelio": {
     responsavel: "Clelio",
     membros: [
       { num: 7, nome: "Clelio", faixa: "Adulto" },
+      { num: 8, nome: "Tatiane", faixa: "Adulto" },
+    ]
+  },
+  "8-tatiane": {
+    responsavel: "Tatiane",
+    membros: [
+      { num: 7, nome: "Clelio", faixa: "Adulto" },
+      { num: 8, nome: "Tatiane", faixa: "Adulto" },
+    ]
+  },
+  "9-christian": {
+    responsavel: "Christian",
+    membros: [
+      { num: 9, nome: "Christian", faixa: "Adulto" },
+      { num: 10, nome: "Cristiane", faixa: "Adulto" },
+      { num: 11, nome: "Pedro", faixa: "Adulto" },
+      { num: 12, nome: "Miguel", faixa: "Adulto" },
+    ]
+  },
+  "10-cristiane": {
+    responsavel: "Cristiane",
+    membros: [
+      { num: 9, nome: "Christian", faixa: "Adulto" },
+      { num: 10, nome: "Cristiane", faixa: "Adulto" },
+      { num: 11, nome: "Pedro", faixa: "Adulto" },
+      { num: 12, nome: "Miguel", faixa: "Adulto" },
+    ]
+  },
+  "11-pedro": {
+    responsavel: "Pedro",
+    membros: [
+      { num: 11, nome: "Pedro", faixa: "Adulto" },
+    ]
+  },
+  "12-miguel": {
+    responsavel: "Miguel",
+    membros: [
+      { num: 12, nome: "Miguel", faixa: "Adulto" },
+    ]
+  },
+  "13-dafena": {
+    responsavel: "Dafena",
+    membros: [
+      { num: 13, nome: "Dafena", faixa: "Adulto" },
+      { num: 14, nome: "Ricardo", faixa: "Adulto" },
+    ]
+  },
+  "15-renan": {
+    responsavel: "Renan",
+    membros: [
+      { num: 15, nome: "Renan", faixa: "Adulto" },
+      { num: 16, nome: "Mariana", faixa: "Adulto" },
+    ]
+  },
+  "17-elaine": {
+    responsavel: "Elaine",
+    membros: [
+      { num: 17, nome: "Elaine", faixa: "Adulto" },
+      { num: 18, nome: "Marcello", faixa: "Adulto" },
+    ]
+  },
+  "18-marcello": {
+    responsavel: "Marcello",
+    membros: [
+      { num: 17, nome: "Elaine", faixa: "Adulto" },
+      { num: 18, nome: "Marcello", faixa: "Adulto" },
+    ]
+  },
+  "19-cristina": {
+    responsavel: "Cristina",
+    membros: [
+      { num: 19, nome: "Cristina", faixa: "Adulto" },
+    ]
+  },
+  "20-sueli": {
+    responsavel: "Sueli",
+    membros: [
+      { num: 20, nome: "Sueli", faixa: "Adulto" },
+      { num: 21, nome: "Wilson", faixa: "Adulto" },
+    ]
+  },
+  "24-eduard": {
+    responsavel: "Eduard",
+    membros: [
+      { num: 24, nome: "Eduard", faixa: "Adulto" },
+      { num: 25, nome: "Andressa", faixa: "Adulto" },
+    ]
+  },
+  "25-andressa": {
+    responsavel: "Andressa",
+    membros: [
+      { num: 24, nome: "Eduard", faixa: "Adulto" },
+      { num: 25, nome: "Andressa", faixa: "Adulto" },
+    ]
+  },
+  "26-flavio": {
+    responsavel: "Flávio",
+    membros: [
+      { num: 26, nome: "Flávio", faixa: "Adulto" },
+      { num: 27, nome: "Maiane", faixa: "Adulto" },
+      { num: 28, nome: "Marianne", faixa: "Criança 7-10" },
+    ]
+  },
+  "27-maiane": {
+    responsavel: "Maiane",
+    membros: [
+      { num: 26, nome: "Flávio", faixa: "Adulto" },
+      { num: 27, nome: "Maiane", faixa: "Adulto" },
+      { num: 28, nome: "Marianne", faixa: "Criança 7-10" },
+    ]
+  },
+  "29-anne": {
+    responsavel: "Anne",
+    membros: [
+      { num: 29, nome: "Anne", faixa: "Adulto" },
+      { num: 30, nome: "Rodrigo", faixa: "Adulto" },
+      { num: 31, nome: "Breno", faixa: "Criança até 6" },
+    ]
+  },
+  "30-rodrigo": {
+    responsavel: "Rodrigo",
+    membros: [
+      { num: 29, nome: "Anne", faixa: "Adulto" },
+      { num: 30, nome: "Rodrigo", faixa: "Adulto" },
+      { num: 31, nome: "Breno", faixa: "Criança até 6" },
+    ]
+  },
+  "32-thiago-pulga": {
+    responsavel: "Thiago Pulga",
+    membros: [
+      { num: 32, nome: "Thiago Pulga", faixa: "Adulto" },
+      { num: 33, nome: "Amanda", faixa: "Adulto" },
+      { num: 34, nome: "Mabi", faixa: "Criança até 6" },
+    ]
+  },
+  "33-amanda": {
+    responsavel: "Amanda",
+    membros: [
+      { num: 32, nome: "Thiago Pulga", faixa: "Adulto" },
+      { num: 33, nome: "Amanda", faixa: "Adulto" },
+      { num: 34, nome: "Mabi", faixa: "Criança até 6" },
+    ]
+  },
+  "35-thiago-cruz": {
+    responsavel: "Thiago Cruz",
+    membros: [
+      { num: 35, nome: "Thiago Cruz", faixa: "Adulto" },
+      { num: 36, nome: "Gabriela", faixa: "Adulto" },
+      { num: 37, nome: "Maria Clara", faixa: "Criança 7-10" },
+      { num: 38, nome: "Noah", faixa: "Criança até 6" },
+    ]
+  },
+  "36-gabriela": {
+    responsavel: "Gabriela",
+    membros: [
+      { num: 35, nome: "Thiago Cruz", faixa: "Adulto" },
+      { num: 36, nome: "Gabriela", faixa: "Adulto" },
+      { num: 37, nome: "Maria Clara", faixa: "Criança 7-10" },
+      { num: 38, nome: "Noah", faixa: "Criança até 6" },
+    ]
+  },
+  "39-daniela": {
+    responsavel: "Daniela",
+    membros: [
+      { num: 39, nome: "Daniela", faixa: "Adulto" },
+      { num: 40, nome: "Rodrigo", faixa: "Adulto" },
+      { num: 41, nome: "Letícia", faixa: "Criança 7-10" },
+    ]
+  },
+  "40-rodrigo": {
+    responsavel: "Rodrigo",
+    membros: [
+      { num: 39, nome: "Daniela", faixa: "Adulto" },
+      { num: 40, nome: "Rodrigo", faixa: "Adulto" },
+      { num: 41, nome: "Letícia", faixa: "Criança 7-10" },
+    ]
+  },
+  "43-sandra": {
+    responsavel: "Sandra",
+    membros: [
+      { num: 42, nome: "Ramiro", faixa: "Adulto" },
+      { num: 43, nome: "Sandra", faixa: "Adulto" },
+    ]
+  },
+  "45-marcia": {
+    responsavel: "Márcia",
+    membros: [
+      { num: 44, nome: "Joaquim", faixa: "Adulto" },
+      { num: 45, nome: "Márcia", faixa: "Adulto" },
+    ]
+  },
+  "46-diogo": {
+    responsavel: "Diogo",
+    membros: [
+      { num: 46, nome: "Diogo", faixa: "Adulto" },
+      { num: 47, nome: "Patrícia", faixa: "Adulto" },
+      { num: 48, nome: "Maria Clara", faixa: "Criança 7-10" },
+      { num: 49, nome: "Eduardo", faixa: "Criança 7-10" },
+    ]
+  },
+  "47-patricia": {
+    responsavel: "Patrícia",
+    membros: [
+      { num: 46, nome: "Diogo", faixa: "Adulto" },
+      { num: 47, nome: "Patrícia", faixa: "Adulto" },
+      { num: 48, nome: "Maria Clara", faixa: "Criança 7-10" },
+      { num: 49, nome: "Eduardo", faixa: "Criança 7-10" },
+    ]
+  },
+  "50-tiago": {
+    responsavel: "Tiago",
+    membros: [
+      { num: 50, nome: "Tiago", faixa: "Adulto" },
+      { num: 51, nome: "Leda", faixa: "Adulto" },
+      { num: 52, nome: "Helena", faixa: "Criança 7-10" },
+      { num: 53, nome: "Pedro", faixa: "Criança até 6" },
+    ]
+  },
+  "51-leda": {
+    responsavel: "Leda",
+    membros: [
+      { num: 50, nome: "Tiago", faixa: "Adulto" },
+      { num: 51, nome: "Leda", faixa: "Adulto" },
+      { num: 52, nome: "Helena", faixa: "Criança 7-10" },
+      { num: 53, nome: "Pedro", faixa: "Criança até 6" },
+    ]
+  },
+  "54-rafael": {
+    responsavel: "Rafael",
+    membros: [
+      { num: 54, nome: "Rafael", faixa: "Adulto" },
+      { num: 55, nome: "Fernanda", faixa: "Adulto" },
+    ]
+  },
+  "55-fernanda": {
+    responsavel: "Fernanda",
+    membros: [
+      { num: 54, nome: "Rafael", faixa: "Adulto" },
+      { num: 55, nome: "Fernanda", faixa: "Adulto" },
+      { num: 76, nome: "Fernanda Nardy", faixa: "Adulto" },
+      { num: 77, nome: "Brito", faixa: "Adulto" },
+    ]
+  },
+  "56-natalicio": {
+    responsavel: "Natalício",
+    membros: [
+      { num: 56, nome: "Natalício", faixa: "Adulto" },
+      { num: 57, nome: "Jacqueline", faixa: "Adulto" },
+    ]
+  },
+  "57-jacqueline": {
+    responsavel: "Jacqueline",
+    membros: [
+      { num: 56, nome: "Natalício", faixa: "Adulto" },
+      { num: 57, nome: "Jacqueline", faixa: "Adulto" },
+    ]
+  },
+  "58-camilla-cristina": {
+    responsavel: "Camilla Cristina",
+    membros: [
+      { num: 58, nome: "Camilla Cristina", faixa: "Adulto" },
+      { num: 59, nome: "Acompanhante", faixa: "Adulto" },
+    ]
+  },
+  "63-sabrina": {
+    responsavel: "Sabrina",
+    membros: [
+      { num: 63, nome: "Sabrina", faixa: "Adulto" },
+      { num: 64, nome: "Rodrigo", faixa: "Adulto" },
+    ]
+  },
+  "64-rodrigo": {
+    responsavel: "Rodrigo",
+    membros: [
+      { num: 63, nome: "Sabrina", faixa: "Adulto" },
+      { num: 64, nome: "Rodrigo", faixa: "Adulto" },
+    ]
+  },
+  "65-herculano": {
+    responsavel: "Herculano",
+    membros: [
+      { num: 65, nome: "Herculano", faixa: "Adulto" },
+    ]
+  },
+  "66-gleyci": {
+    responsavel: "Gleyci",
+    membros: [
+      { num: 66, nome: "Gleyci", faixa: "Adulto" },
+    ]
+  },
+  "67-wendler": {
+    responsavel: "Wendler",
+    membros: [
+      { num: 67, nome: "Wendler", faixa: "Adulto" },
+      { num: 68, nome: "Acompanhante", faixa: "Adulto" },
+    ]
+  },
+  "69-leticia": {
+    responsavel: "Letícia",
+    membros: [
+      { num: 69, nome: "Letícia", faixa: "Adulto" },
+      { num: 70, nome: "Yago", faixa: "Adulto" },
+    ]
+  },
+  "70-yago": {
+    responsavel: "Yago",
+    membros: [
+      { num: 69, nome: "Letícia", faixa: "Adulto" },
+      { num: 70, nome: "Yago", faixa: "Adulto" },
+    ]
+  },
+  "77-brito": {
+    responsavel: "Brito",
+    membros: [
+      { num: 76, nome: "Fernanda Nardy", faixa: "Adulto" },
+      { num: 77, nome: "Brito", faixa: "Adulto" },
+    ]
+  },
+  "78-joao": {
+    responsavel: "João",
+    membros: [
+      { num: 78, nome: "João", faixa: "Adulto" },
+      { num: 79, nome: "Luis", faixa: "Adulto" },
+    ]
+  },
+  "82-dennys": {
+    responsavel: "Dennys",
+    membros: [
+      { num: 82, nome: "Dennys", faixa: "Adulto" },
+      { num: 83, nome: "Katia", faixa: "Adulto" },
+    ]
+  },
+  "83-katia": {
+    responsavel: "Katia",
+    membros: [
+      { num: 82, nome: "Dennys", faixa: "Adulto" },
+      { num: 83, nome: "Katia", faixa: "Adulto" },
+    ]
+  },
+  "84-vilma": {
+    responsavel: "Vilma",
+    membros: [
+      { num: 84, nome: "Vilma", faixa: "Adulto" },
+    ]
+  },
+  "94-valter": {
+    responsavel: "Valter",
+    membros: [
+      { num: 94, nome: "Valter", faixa: "Adulto" },
+      { num: 95, nome: "Anesia", faixa: "Adulto" },
+    ]
+  },
+  "95-anesia": {
+    responsavel: "Anesia",
+    membros: [
+      { num: 94, nome: "Valter", faixa: "Adulto" },
+      { num: 95, nome: "Anesia", faixa: "Adulto" },
+    ]
+  },
+  "96-tonico": {
+    responsavel: "Tonico",
+    membros: [
+      { num: 96, nome: "Tonico", faixa: "Adulto" },
+      { num: 97, nome: "Geni", faixa: "Adulto" },
+      { num: 98, nome: "Melissa", faixa: "Criança 7-10" },
+    ]
+  },
+  "97-geni": {
+    responsavel: "Geni",
+    membros: [
+      { num: 96, nome: "Tonico", faixa: "Adulto" },
+      { num: 97, nome: "Geni", faixa: "Adulto" },
+      { num: 98, nome: "Melissa", faixa: "Criança 7-10" },
+    ]
+  },
+  "99-maysa": {
+    responsavel: "Maysa",
+    membros: [
+      { num: 99, nome: "Maysa", faixa: "Adulto" },
+      { num: 100, nome: "Nilson", faixa: "Adulto" },
+      { num: 101, nome: "Rebeca", faixa: "Criança até 6" },
+    ]
+  },
+  "100-nilson": {
+    responsavel: "Nilson",
+    membros: [
+      { num: 99, nome: "Maysa", faixa: "Adulto" },
+      { num: 100, nome: "Nilson", faixa: "Adulto" },
+      { num: 101, nome: "Rebeca", faixa: "Criança até 6" },
+    ]
+  },
+  "102-mimi": {
+    responsavel: "Mimi",
+    membros: [
+      { num: 102, nome: "Mimi", faixa: "Adulto" },
+      { num: 103, nome: "Sueli", faixa: "Adulto" },
+    ]
+  },
+  "103-sueli": {
+    responsavel: "Sueli",
+    membros: [
+      { num: 102, nome: "Mimi", faixa: "Adulto" },
+      { num: 103, nome: "Sueli", faixa: "Adulto" },
+    ]
+  },
+  "104-juliana": {
+    responsavel: "Juliana",
+    membros: [
+      { num: 104, nome: "Juliana", faixa: "Adulto" },
+    ]
+  },
+  "105-fernando": {
+    responsavel: "Fernando",
+    membros: [
+      { num: 105, nome: "Fernando", faixa: "Adulto" },
+      { num: 106, nome: "Hilana", faixa: "Adulto" },
+    ]
+  },
+  "107-conceicao": {
+    responsavel: "Conceição",
+    membros: [
+      { num: 107, nome: "Conceição", faixa: "Adulto" },
+      { num: 108, nome: "Paulo", faixa: "Adulto" },
+    ]
+  },
+  "114-carmen": {
+    responsavel: "Carmen",
+    membros: [
+      { num: 114, nome: "Carmen", faixa: "Adulto" },
+    ]
+  },
+  "115-sandra": {
+    responsavel: "Sandra",
+    membros: [
+      { num: 115, nome: "Sandra", faixa: "Adulto" },
+    ]
+  },
+  "116-lilian": {
+    responsavel: "Lilian",
+    membros: [
+      { num: 116, nome: "Lilian", faixa: "Adulto" },
+    ]
+  },
+  "117-erick": {
+    responsavel: "Erick",
+    membros: [
+      { num: 117, nome: "Erick", faixa: "Adulto" },
+      { num: 118, nome: "Viviane", faixa: "Adulto" },
+      { num: 119, nome: "Cecília", faixa: "Criança até 6" },
+    ]
+  },
+  "118-viviane": {
+    responsavel: "Viviane",
+    membros: [
+      { num: 117, nome: "Erick", faixa: "Adulto" },
+      { num: 118, nome: "Viviane", faixa: "Adulto" },
+      { num: 119, nome: "Cecília", faixa: "Criança até 6" },
+    ]
+  },
+  "122-diego": {
+    responsavel: "Diego",
+    membros: [
+      { num: 122, nome: "Diego", faixa: "Adulto" },
+      { num: 123, nome: "Karen", faixa: "Adulto" },
+      { num: 124, nome: "Heitor", faixa: "Criança 7-10" },
+      { num: 125, nome: "Victor", faixa: "Criança 7-10" },
+    ]
+  },
+  "123-karen": {
+    responsavel: "Karen",
+    membros: [
+      { num: 122, nome: "Diego", faixa: "Adulto" },
+      { num: 123, nome: "Karen", faixa: "Adulto" },
+      { num: 124, nome: "Heitor", faixa: "Criança 7-10" },
+      { num: 125, nome: "Victor", faixa: "Criança 7-10" },
+    ]
+  },
+  "130-adriana": {
+    responsavel: "Adriana",
+    membros: [
+      { num: 129, nome: "Ronaldo", faixa: "Adulto" },
+      { num: 130, nome: "Adriana", faixa: "Adulto" },
+      { num: 131, nome: "Paulo", faixa: "Adulto" },
+    ]
+  },
+  "132-bruna": {
+    responsavel: "Bruna",
+    membros: [
+      { num: 132, nome: "Bruna", faixa: "Adulto" },
+      { num: 133, nome: "Renato", faixa: "Adulto" },
+    ]
+  },
+  "134-fabiola": {
+    responsavel: "Fabiola",
+    membros: [
+      { num: 134, nome: "Fabiola", faixa: "Adulto" },
+    ]
+  },
+  "135-marco": {
+    responsavel: "Marco",
+    membros: [
+      { num: 135, nome: "Marco", faixa: "Adulto" },
+      { num: 136, nome: "Daniela", faixa: "Adulto" },
+      { num: 137, nome: "Sofia", faixa: "Criança até 6" },
+      { num: 138, nome: "Arthur", faixa: "Criança até 6" },
+    ]
+  },
+  "136-daniela": {
+    responsavel: "Daniela",
+    membros: [
+      { num: 135, nome: "Marco", faixa: "Adulto" },
+      { num: 136, nome: "Daniela", faixa: "Adulto" },
+      { num: 137, nome: "Sofia", faixa: "Criança até 6" },
+      { num: 138, nome: "Arthur", faixa: "Criança até 6" },
+    ]
+  },
+  "141-tatiana": {
+    responsavel: "Tatiana",
+    membros: [
+      { num: 141, nome: "Tatiana", faixa: "Adulto" },
+      { num: 142, nome: "Acompanhante", faixa: "Adulto" },
+    ]
+  },
+  "143-katia": {
+    responsavel: "Katia",
+    membros: [
+      { num: 143, nome: "Katia", faixa: "Adulto" },
+      { num: 144, nome: "Rogério", faixa: "Adulto" },
+    ]
+  },
+  "145-eryka": {
+    responsavel: "Eryka",
+    membros: [
+      { num: 145, nome: "Eryka", faixa: "Adulto" },
+      { num: 146, nome: "Acompanhante", faixa: "Adulto" },
+    ]
+  },
+  "147-rafael": {
+    responsavel: "Rafael",
+    membros: [
+      { num: 147, nome: "Rafael", faixa: "Adulto" },
+      { num: 148, nome: "Acompanhante", faixa: "Adulto" },
+    ]
+  },
+  "149-wilson": {
+    responsavel: "Wilson",
+    membros: [
+      { num: 149, nome: "Wilson", faixa: "Adulto" },
+      { num: 150, nome: "Karine", faixa: "Adulto" },
+    ]
+  },
+  "151-elaine": {
+    responsavel: "Elaine",
+    membros: [
+      { num: 151, nome: "Elaine", faixa: "Adulto" },
     ]
   },
 };
@@ -501,8 +1061,26 @@ function iniciais(nome) {
 }
 
 const params = new URLSearchParams(window.location.search);
-const chave = (params.get("grupo") || "nauber").toLowerCase();
-const grupo = grupos[chave] || grupos["nauber"];
+
+function slugify(s) {
+  s = (s || "").toLowerCase().trim();
+  s = s.normalize('NFD').replace(/[̀-ͯ]/g, '');
+  s = s.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return s;
+}
+
+const chave = slugify(params.get("grupo") || "");
+const grupo = grupos[chave];
+
+if (!grupo) {
+  document.getElementById("card-confirmacao").innerHTML =
+    '<div style="padding:2rem;text-align:center;">' +
+    '<div style="font-size:3rem;margin-bottom:1rem;">&#128533;</div>' +
+    '<h2 style="font-family:Playfair Display,serif;color:#1B4332;margin-bottom:0.5rem;">Link inv&aacute;lido</h2>' +
+    '<p style="color:#666;font-size:14px;">Este link n&atilde;o &eacute; v&aacute;lido.<br>Entre em contato com Nauber.</p>' +
+    '</div>';
+  throw new Error("Grupo nao encontrado: " + chave);
+}
 
 document.getElementById("nome-responsavel").textContent = grupo.responsavel;
 document.getElementById("avatar-iniciais").textContent = iniciais(grupo.responsavel);
@@ -551,7 +1129,10 @@ async function confirmar() {
     responsavel: grupo.responsavel,
     grupo: chave,
     timestamp: new Date().toISOString(),
-    respostas: respostas
+    respostas: respostas.map(r => ({
+      ...r,
+      codigo: (grupo.membros.find(m => m.num === r.num) || {}).nome || r.nome
+    }))
   };
 
   try {

@@ -7,418 +7,89 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --verde:  #1B4332;
-    --verde2: #2D6A4F;
-    --rosa:   #C2185B;
-    --rosa2:  #E91E8C;
-    --dourado:#C9A84C;
-    --creme:  #F5F0E8;
-    --texto:  #1a1a1a;
+    --verde: #1B4332; --verde2: #2D6A4F; --rosa: #C2185B; --rosa2: #E91E8C;
+    --dourado: #C9A84C; --creme: #F5F0E8; --texto: #1a1a1a;
   }
-
-  body {
-    font-family: 'Lato', sans-serif;
-    background: var(--creme);
-    color: var(--texto);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Faixa decorativa topo */
-  .faixa-topo {
-    width: 100%;
-    height: 8px;
-    background: linear-gradient(90deg, var(--verde) 0%, var(--dourado) 50%, var(--rosa) 100%);
-  }
-
-  /* Header */
-  .header {
-    width: 100%;
-    max-width: 520px;
-    padding: 2.5rem 1.5rem 1.5rem;
-    text-align: center;
-  }
-
-  .eyebrow {
-    font-family: 'Lato', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--dourado);
-    margin-bottom: 0.5rem;
-  }
-
-  .titulo-n40 {
-    font-family: 'Playfair Display', serif;
-    font-size: 5rem;
-    font-weight: 900;
-    color: var(--verde);
-    line-height: 1;
-    text-shadow: 3px 3px 0 var(--dourado);
-    letter-spacing: -2px;
-  }
-
-  .titulo-nauber {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--rosa);
-    margin-top: -0.25rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .subtitulo {
-    font-size: 13px;
-    color: var(--verde2);
-    letter-spacing: 0.08em;
-    font-weight: 300;
-  }
-
-  .divisor {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 1.25rem auto;
-    max-width: 260px;
-  }
-  .divisor::before, .divisor::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--dourado);
-  }
-  .divisor span {
-    color: var(--dourado);
-    font-size: 16px;
-  }
-
-  /* Info evento */
-  .info-evento {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.5rem;
-  }
-  .info-item {
-    text-align: center;
-  }
-  .info-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--rosa);
-    display: block;
-    margin-bottom: 2px;
-  }
-  .info-valor {
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--verde);
-  }
-
-  /* Card principal */
-  .card {
-    width: 100%;
-    max-width: 520px;
-    margin: 0 1rem 2rem;
-    background: #fff;
-    border-radius: 16px;
-    border: 1.5px solid var(--dourado);
-    overflow: hidden;
-  }
-
-  .card-header {
-    background: var(--verde);
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--dourado);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--verde);
-    flex-shrink: 0;
-  }
-
-  .card-header-text .saudacao {
-    font-size: 11px;
-    color: rgba(255,255,255,0.6);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-  .card-header-text .responsavel {
-    font-size: 17px;
-    font-weight: 700;
-    color: #fff;
-    font-family: 'Playfair Display', serif;
-  }
-
+  body { font-family: 'Lato', sans-serif; background: var(--creme); color: var(--texto); min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+  .faixa-topo { width: 100%; height: 8px; background: linear-gradient(90deg, var(--verde) 0%, var(--dourado) 50%, var(--rosa) 100%); }
+  .header { width: 100%; max-width: 520px; padding: 2.5rem 1.5rem 1.5rem; text-align: center; }
+  .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dourado); margin-bottom: 0.5rem; }
+  .titulo-n40 { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 900; color: var(--verde); line-height: 1; text-shadow: 3px 3px 0 var(--dourado); letter-spacing: -2px; }
+  .titulo-nauber { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--rosa); margin-top: -0.25rem; margin-bottom: 0.25rem; }
+  .subtitulo { font-size: 13px; color: var(--verde2); letter-spacing: 0.08em; font-weight: 300; }
+  .divisor { display: flex; align-items: center; gap: 10px; margin: 1.25rem auto; max-width: 260px; }
+  .divisor::before, .divisor::after { content: ''; flex: 1; height: 1px; background: var(--dourado); }
+  .divisor span { color: var(--dourado); font-size: 16px; }
+  .info-evento { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+  .info-item { text-align: center; }
+  .info-label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rosa); display: block; margin-bottom: 2px; }
+  .info-valor { font-size: 13px; font-weight: 400; color: var(--verde); }
+  .card { width: 100%; max-width: 520px; margin: 0 1rem 2rem; background: #fff; border-radius: 16px; border: 1.5px solid var(--dourado); overflow: hidden; }
+  .card-header { background: var(--verde); padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 12px; }
+  .avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--dourado); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--verde); flex-shrink: 0; }
+  .card-header-text .saudacao { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.1em; text-transform: uppercase; }
+  .card-header-text .responsavel { font-size: 17px; font-weight: 700; color: #fff; font-family: 'Playfair Display', serif; }
   .card-body { padding: 1.5rem; }
-
-  .instrucao {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 1.25rem;
-    line-height: 1.6;
-  }
-
-  /* Linha de convidado */
-  .convidado-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 0;
-    border-bottom: 0.5px solid #eee;
-    gap: 12px;
-  }
+  .instrucao { font-size: 14px; color: #555; margin-bottom: 1.25rem; line-height: 1.6; }
+  .convidado-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 0.5px solid #eee; gap: 12px; }
   .convidado-row:last-child { border-bottom: none; }
-
   .convidado-info { flex: 1; }
-  .convidado-nome {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--verde);
-  }
-  .convidado-faixa {
-    font-size: 11px;
-    color: #888;
-    margin-top: 1px;
-  }
-
-  /* Toggle Sim/Não */
-  .toggle-group {
-    display: flex;
-    border: 1.5px solid var(--dourado);
-    border-radius: 30px;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
+  .convidado-nome { font-size: 15px; font-weight: 700; color: var(--verde); }
+  .convidado-faixa { font-size: 11px; color: #888; margin-top: 1px; }
+  .input-nome { margin-top: 6px; width: 100%; font-size: 13px; padding: 6px 10px; border-radius: 8px; border: 1.5px solid var(--dourado); background: #fafafa; color: #333; box-sizing: border-box; font-family: 'Lato', sans-serif; }
+  .input-nome:focus { outline: none; border-color: #1B4332; }
+  .input-nome::placeholder { color: #aaa; }
+  .toggle-group { display: flex; border: 1.5px solid var(--dourado); border-radius: 30px; overflow: hidden; flex-shrink: 0; }
   .toggle-group input[type=radio] { display: none; }
-  .toggle-group label {
-    padding: 7px 18px;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.15s, color 0.15s;
-    color: #888;
-    background: transparent;
-    letter-spacing: 0.04em;
-  }
-  .toggle-group input[value="sim"]:checked + label {
-    background: var(--verde);
-    color: #fff;
-  }
-  .toggle-group input[value="nao"]:checked + label {
-    background: var(--rosa);
-    color: #fff;
-  }
-
-  /* Botão confirmar */
-  .btn-confirmar {
-    width: 100%;
-    margin-top: 1.5rem;
-    padding: 15px;
-    background: var(--rosa);
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Lato', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.15s, transform 0.1s;
-  }
+  .toggle-group label { padding: 7px 18px; font-size: 13px; font-weight: 700; cursor: pointer; transition: background 0.15s, color 0.15s; color: #888; background: transparent; letter-spacing: 0.04em; }
+  .toggle-group input[value="sim"]:checked + label { background: var(--verde); color: #fff; }
+  .toggle-group input[value="nao"]:checked + label { background: var(--rosa); color: #fff; }
+  .btn-confirmar { width: 100%; margin-top: 1.5rem; padding: 15px; background: var(--rosa); color: #fff; border: none; border-radius: 10px; font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.15s; }
   .btn-confirmar:hover { background: var(--rosa2); }
-  .btn-confirmar:active { transform: scale(0.98); }
-
-  /* Tela de sucesso */
-  .sucesso {
-    display: none;
-    text-align: center;
-    padding: 2rem 1.5rem;
-  }
-  .sucesso-icone {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: var(--verde);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    font-size: 28px;
-  }
-  .sucesso h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: var(--verde);
-    margin-bottom: 0.5rem;
-  }
-  .sucesso p {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.6;
-  }
-
-  /* Rodapé */
-  .rodape {
-    text-align: center;
-    padding: 1rem;
-    font-size: 11px;
-    color: #aaa;
-    letter-spacing: 0.05em;
-  }
-
-  .faixa-base {
-    width: 100%;
-    height: 6px;
-    background: linear-gradient(90deg, var(--rosa) 0%, var(--dourado) 50%, var(--verde) 100%);
-    margin-top: auto;
-  }
-
-  /* Mapa */
-  .card-mapa {
-    width: 100%;
-    max-width: 520px;
-    margin: 0 1rem 2rem;
-    background: #fff;
-    border-radius: 16px;
-    border: 1.5px solid var(--dourado);
-    overflow: hidden;
-  }
-  .card-mapa-header {
-    background: var(--verde);
-    padding: 1rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .card-mapa-header .icone {
-    font-size: 20px;
-  }
-  .card-mapa-header-text .label {
-    font-size: 10px;
-    color: rgba(255,255,255,0.6);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-  .card-mapa-header-text .local {
-    font-size: 15px;
-    font-weight: 700;
-    color: #fff;
-    font-family: 'Playfair Display', serif;
-  }
-  .card-mapa-header-text .endereco {
-    font-size: 12px;
-    color: rgba(255,255,255,0.7);
-    margin-top: 1px;
-  }
-  .mapa-iframe {
-    width: 100%;
-    height: 240px;
-    border: 0;
-    display: block;
-  }
-  .card-mapa-footer {
-    padding: 0.75rem 1.5rem;
-    display: flex;
-    justify-content: center;
-  }
-  .btn-rota {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 9px 20px;
-    border-radius: 30px;
-    border: 1.5px solid var(--dourado);
-    background: transparent;
-    color: var(--verde);
-    font-family: 'Lato', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.15s, color 0.15s;
-  }
-  .btn-rota:hover {
-    background: var(--verde);
-    color: #fff;
-    border-color: var(--verde);
-  }
-
+  .sucesso { display: none; text-align: center; padding: 2rem 1.5rem; }
+  .sucesso-icone { width: 64px; height: 64px; border-radius: 50%; background: var(--verde); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 28px; }
+  .sucesso h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--verde); margin-bottom: 0.5rem; }
+  .sucesso p { font-size: 14px; color: #666; line-height: 1.6; }
+  .card-mapa { width: 100%; max-width: 520px; margin: 0 1rem 2rem; background: #fff; border-radius: 16px; border: 1.5px solid var(--dourado); overflow: hidden; }
+  .card-mapa-header { background: var(--verde); padding: 1rem 1.5rem; display: flex; align-items: center; gap: 10px; }
+  .card-mapa-header .icone { font-size: 20px; }
+  .card-mapa-header-text .label { font-size: 10px; color: rgba(255,255,255,0.6); letter-spacing: 0.12em; text-transform: uppercase; }
+  .card-mapa-header-text .local { font-size: 15px; font-weight: 700; color: #fff; font-family: 'Playfair Display', serif; }
+  .card-mapa-header-text .endereco { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 1px; }
+  .mapa-iframe { width: 100%; height: 240px; border: 0; display: block; }
+  .card-mapa-footer { padding: 0.75rem 1.5rem; display: flex; justify-content: center; }
+  .btn-rota { display: inline-flex; align-items: center; gap: 6px; padding: 9px 20px; border-radius: 30px; border: 1.5px solid var(--dourado); background: transparent; color: var(--verde); font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-decoration: none; transition: background 0.15s, color 0.15s; }
+  .btn-rota:hover { background: var(--verde); color: #fff; border-color: var(--verde); }
+  .rodape { text-align: center; padding: 1rem; font-size: 11px; color: #aaa; letter-spacing: 0.05em; }
+  .faixa-base { width: 100%; height: 6px; background: linear-gradient(90deg, var(--rosa) 0%, var(--dourado) 50%, var(--verde) 100%); margin-top: auto; }
   @media (max-width: 480px) {
     .titulo-n40 { font-size: 3.5rem; }
-    .card { margin: 0 0.75rem 1.5rem; }
-    .card-mapa { margin: 0 0.75rem 1.5rem; }
+    .card, .card-mapa { margin: 0 0.75rem 1.5rem; }
     .toggle-group label { padding: 7px 14px; font-size: 12px; }
   }
 </style>
 </head>
 <body>
-
 <div class="faixa-topo"></div>
-
 <div class="header">
   <p class="eyebrow">Convite especial &mdash; Camarote</p>
   <div class="titulo-n40">N40</div>
   <div class="titulo-nauber">Nauber</div>
   <p class="subtitulo">40 anos &bull; Vamos celebrar</p>
-  <div class="divisor"><span>✦</span></div>
+  <div class="divisor"><span>&#10022;</span></div>
   <div class="info-evento">
-    <div class="info-item">
-      <span class="info-label">Data</span>
-      <span class="info-valor">15/08/2026 &mdash; Sábado</span>
-    </div>
-    <div class="info-item">
-      <span class="info-label">Horário</span>
-      <span class="info-valor">17h às 22h</span>
-    </div>
-    <div class="info-item">
-      <span class="info-label">Local</span>
-      <span class="info-valor">Casa Maria Rosa &mdash; Jardim França</span>
-    </div>
+    <div class="info-item"><span class="info-label">Data</span><span class="info-valor">15/08/2026 &mdash; S&aacute;bado</span></div>
+    <div class="info-item"><span class="info-label">Hor&aacute;rio</span><span class="info-valor">17h &agrave;s 22h</span></div>
+    <div class="info-item"><span class="info-label">Local</span><span class="info-valor">Casa Maria Rosa &mdash; Jardim Fran&ccedil;a</span></div>
   </div>
-  <div class="divisor"><span>✦</span></div>
+  <div class="divisor"><span>&#10022;</span></div>
 </div>
 
 <div class="card" id="card-confirmacao">
-  <div class="card-header">
-    <div class="avatar" id="avatar-iniciais">N</div>
-    <div class="card-header-text">
-      <div class="saudacao">Confirmar presença</div>
-      <div class="responsavel" id="nome-responsavel">Convidado</div>
-    </div>
-  </div>
-  <div class="card-body">
-    <p class="instrucao" id="texto-instrucao">Confirme a presença de cada pessoa do seu grupo:</p>
-    <div id="lista-convidados"></div>
-    <button class="btn-confirmar" onclick="confirmar()">Confirmar presenças</button>
-  </div>
-
-  <div class="sucesso" id="tela-sucesso">
-    <div class="sucesso-icone">🎉</div>
-    <h2>Confirmado!</h2>
-    <p>Sua presença foi registrada com sucesso.<br>Mal podemos esperar para celebrar juntos!</p>
+  <div style="padding:2rem;text-align:center;">
+    <div style="font-size:2rem;margin-bottom:1rem;">&#9203;</div>
+    <p style="color:#666;font-size:14px;">Carregando informa&ccedil;&otilde;es...</p>
   </div>
 </div>
 
@@ -428,214 +99,558 @@
     <div class="card-mapa-header-text">
       <div class="label">Local da festa</div>
       <div class="local">Casa Maria Rosa</div>
-      <div class="endereco">Av. Água Fria, 1608 &mdash; Jardim França</div>
+      <div class="endereco">Av. &Aacute;gua Fria, 1608 &mdash; Jardim Fran&ccedil;a</div>
     </div>
   </div>
-  <iframe
-    class="mapa-iframe"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.5917087301495!2d-46.62155702549103!3d-23.475187658430407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef65b3c1b3c93%3A0xaf9067d9702420f3!2sAv.%20%C3%81gua%20Fria%2C%201608%20-%20Tucuruvi%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002332-001!5e0!3m2!1sen!2sbr!4v1782431610576!5m2!1sen!2sbr"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="strict-origin-when-cross-origin">
-  </iframe>
+  <iframe class="mapa-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.5917087301495!2d-46.62155702549103!3d-23.475187658430407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef65b3c1b3c93%3A0xaf9067d9702420f3!2sAv.%20%C3%81gua%20Fria%2C%201608%20-%20Tucuruvi%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002332-001!5e0!3m2!1sen!2sbr!4v1782431610576!5m2!1sen!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
   <div class="card-mapa-footer">
-    <a class="btn-rota" href="https://www.google.com/maps/dir/?api=1&destination=Av.+%C3%81gua+Fria,+1608,+Jardim+Fran%C3%A7a,+S%C3%A3o+Paulo" target="_blank">
-      &#9654; Como chegar
-    </a>
+    <a class="btn-rota" href="https://www.google.com/maps/dir/?api=1&destination=Av.+%C3%81gua+Fria,+1608,+Jardim+Fran%C3%A7a,+S%C3%A3o+Paulo" target="_blank">&#9654; Como chegar</a>
   </div>
 </div>
 
-<p class="rodape">Av. Água Fria, 1608 &mdash; Jardim França &mdash; Casa Maria Rosa</p>
+<p class="rodape">Av. &Aacute;gua Fria, 1608 &mdash; Jardim Fran&ccedil;a &mdash; Casa Maria Rosa</p>
 <div class="faixa-base"></div>
 
 <script>
-const WEBHOOK = "https://hook.us2.make.com/csa7lw8h9uroifoieh8u98r9bmtwkswk";
-const SHEET_URL = "https://docs.google.com/spreadsheets/d/173VscH3_kyiMPJ76OcahGMz8EfOe8TsyHvwLJtd1JVI/gviz/tq?tqx=out:json&sheet=Convidados";
+var WEBHOOK = "https://hook.us2.make.com/csa7lw8h9uroifoieh8u98r9bmtwkswk";
+var SHEET_ID = "173VscH3_kyiMPJ76OcahGMz8EfOe8TsyHvwLJtd1JVI";
 
 function slugify(s) {
   s = (s || "").toLowerCase().trim();
-  s = s.normalize('NFD').replace(/[̀-ͯ]/g, '');
-  s = s.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  s = s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  s = s.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   return s;
 }
 
 function faixaLabel(f) {
-  if (f === "Criança 7-10") return "Criança (7–10 anos)";
-  if (f === "Criança até 6") return "Criança (até 6 anos)";
+  if (f === "Crian\u00e7a 7-10") return "Crian\u00e7a (7\u201310 anos)";
+  if (f === "Crian\u00e7a at\u00e9 6") return "Crian\u00e7a (at\u00e9 6 anos)";
   return "";
 }
 
 function iniciais(nome) {
-  return (nome || "?").split(" ").map(n => n[0]).slice(0,2).join("").toUpperCase();
+  return (nome || "?").split(" ").map(function(n) { return n[0]; }).slice(0,2).join("").toUpperCase();
 }
 
-// Carregar dados do Google Sheets e montar grupos
-async function carregarGrupos() {
-  try {
-    const resp = await fetch(SHEET_URL);
-    const text = await resp.text();
-    // Google retorna JSON com prefixo /*O_o*/
-google.visualization.Query.setResponse(...)
-    const json = JSON.parse(text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*?)\);/)[1]);
-    const rows = json.table.rows;
-    const cols = json.table.cols.map(c => c.label.toLowerCase().replace(/\s+/g, '_'));
+var grupos = {
+  "1-nauber": {responsavel: "Nauber", membros: [
+    {num: 1, nome: "Nauber", faixa: "Adulto"},
+  ]},
+  "2-vanessa": {responsavel: "Vanessa", membros: [
+    {num: 2, nome: "Vanessa", faixa: "Adulto"},
+    {num: 3, nome: "Maria Júlia", faixa: "Criança 7-10"},
+  ]},
+  "4-elica": {responsavel: "Elica", membros: [
+    {num: 4, nome: "Elica", faixa: "Adulto"},
+    {num: 5, nome: "Amaury", faixa: "Adulto"},
+    {num: 6, nome: "Nauê", faixa: "Adulto"},
+  ]},
+  "5-amaury": {responsavel: "Amaury", membros: [
+    {num: 4, nome: "Elica", faixa: "Adulto"},
+    {num: 5, nome: "Amaury", faixa: "Adulto"},
+    {num: 6, nome: "Nauê", faixa: "Adulto"},
+  ]},
+  "6-naue": {responsavel: "Nauê", membros: [
+    {num: 4, nome: "Elica", faixa: "Adulto"},
+    {num: 5, nome: "Amaury", faixa: "Adulto"},
+    {num: 6, nome: "Nauê", faixa: "Adulto"},
+  ]},
+  "7-clelio": {responsavel: "Clelio", membros: [
+    {num: 7, nome: "Clelio", faixa: "Adulto"},
+    {num: 8, nome: "Tatiane", faixa: "Adulto"},
+  ]},
+  "8-tatiane": {responsavel: "Tatiane", membros: [
+    {num: 7, nome: "Clelio", faixa: "Adulto"},
+    {num: 8, nome: "Tatiane", faixa: "Adulto"},
+  ]},
+  "9-christian": {responsavel: "Christian", membros: [
+    {num: 9, nome: "Christian", faixa: "Adulto"},
+    {num: 10, nome: "Cristiane", faixa: "Adulto"},
+    {num: 11, nome: "Pedro", faixa: "Adulto"},
+    {num: 12, nome: "Miguel", faixa: "Adulto"},
+  ]},
+  "10-cristiane": {responsavel: "Cristiane", membros: [
+    {num: 9, nome: "Christian", faixa: "Adulto"},
+    {num: 10, nome: "Cristiane", faixa: "Adulto"},
+    {num: 11, nome: "Pedro", faixa: "Adulto"},
+    {num: 12, nome: "Miguel", faixa: "Adulto"},
+  ]},
+  "11-pedro": {responsavel: "Pedro", membros: [
+    {num: 11, nome: "Pedro", faixa: "Adulto"},
+  ]},
+  "12-miguel": {responsavel: "Miguel", membros: [
+    {num: 12, nome: "Miguel", faixa: "Adulto"},
+  ]},
+  "13-dafena": {responsavel: "Dafena", membros: [
+    {num: 13, nome: "Dafena", faixa: "Adulto"},
+    {num: 14, nome: "Ricardo", faixa: "Adulto"},
+  ]},
+  "15-renan": {responsavel: "Renan", membros: [
+    {num: 15, nome: "Renan", faixa: "Adulto"},
+    {num: 16, nome: "Mariana", faixa: "Adulto"},
+  ]},
+  "17-elaine": {responsavel: "Elaine", membros: [
+    {num: 17, nome: "Elaine", faixa: "Adulto"},
+    {num: 18, nome: "Marcello", faixa: "Adulto"},
+  ]},
+  "18-marcello": {responsavel: "Marcello", membros: [
+    {num: 17, nome: "Elaine", faixa: "Adulto"},
+    {num: 18, nome: "Marcello", faixa: "Adulto"},
+  ]},
+  "19-cristina": {responsavel: "Cristina", membros: [
+    {num: 19, nome: "Cristina", faixa: "Adulto"},
+  ]},
+  "20-sueli": {responsavel: "Sueli", membros: [
+    {num: 20, nome: "Sueli", faixa: "Adulto"},
+    {num: 21, nome: "Wilson", faixa: "Adulto"},
+  ]},
+  "23-beth": {responsavel: "Beth", membros: [
+    {num: 22, nome: "Alvanir", faixa: "Adulto"},
+    {num: 23, nome: "Beth", faixa: "Adulto"},
+  ]},
+  "24-eduard": {responsavel: "Eduard", membros: [
+    {num: 24, nome: "Eduard", faixa: "Adulto"},
+    {num: 25, nome: "Andressa", faixa: "Adulto"},
+  ]},
+  "25-andressa": {responsavel: "Andressa", membros: [
+    {num: 24, nome: "Eduard", faixa: "Adulto"},
+    {num: 25, nome: "Andressa", faixa: "Adulto"},
+  ]},
+  "26-flavio": {responsavel: "Flávio", membros: [
+    {num: 26, nome: "Flávio", faixa: "Adulto"},
+    {num: 27, nome: "Maiane", faixa: "Adulto"},
+    {num: 28, nome: "Marianne", faixa: "Criança 7-10"},
+  ]},
+  "27-maiane": {responsavel: "Maiane", membros: [
+    {num: 26, nome: "Flávio", faixa: "Adulto"},
+    {num: 27, nome: "Maiane", faixa: "Adulto"},
+    {num: 28, nome: "Marianne", faixa: "Criança 7-10"},
+  ]},
+  "29-anne": {responsavel: "Anne", membros: [
+    {num: 29, nome: "Anne", faixa: "Adulto"},
+    {num: 30, nome: "Rodrigo", faixa: "Adulto"},
+    {num: 31, nome: "Breno", faixa: "Criança até 6"},
+  ]},
+  "30-rodrigo": {responsavel: "Rodrigo", membros: [
+    {num: 29, nome: "Anne", faixa: "Adulto"},
+    {num: 30, nome: "Rodrigo", faixa: "Adulto"},
+    {num: 31, nome: "Breno", faixa: "Criança até 6"},
+  ]},
+  "32-thiago-pulga": {responsavel: "Thiago Pulga", membros: [
+    {num: 32, nome: "Thiago Pulga", faixa: "Adulto"},
+    {num: 33, nome: "Amanda", faixa: "Adulto"},
+    {num: 34, nome: "Mabi", faixa: "Criança até 6"},
+  ]},
+  "33-amanda": {responsavel: "Amanda", membros: [
+    {num: 32, nome: "Thiago Pulga", faixa: "Adulto"},
+    {num: 33, nome: "Amanda", faixa: "Adulto"},
+    {num: 34, nome: "Mabi", faixa: "Criança até 6"},
+  ]},
+  "35-thiago-cruz": {responsavel: "Thiago Cruz", membros: [
+    {num: 35, nome: "Thiago Cruz", faixa: "Adulto"},
+    {num: 36, nome: "Gabriela", faixa: "Adulto"},
+    {num: 37, nome: "Maria Clara", faixa: "Criança 7-10"},
+    {num: 38, nome: "Noah", faixa: "Criança até 6"},
+  ]},
+  "36-gabriela": {responsavel: "Gabriela", membros: [
+    {num: 35, nome: "Thiago Cruz", faixa: "Adulto"},
+    {num: 36, nome: "Gabriela", faixa: "Adulto"},
+    {num: 37, nome: "Maria Clara", faixa: "Criança 7-10"},
+    {num: 38, nome: "Noah", faixa: "Criança até 6"},
+  ]},
+  "39-daniela": {responsavel: "Daniela", membros: [
+    {num: 39, nome: "Daniela", faixa: "Adulto"},
+    {num: 40, nome: "Rodrigo", faixa: "Adulto"},
+    {num: 41, nome: "Letícia", faixa: "Criança 7-10"},
+  ]},
+  "40-rodrigo": {responsavel: "Rodrigo", membros: [
+    {num: 39, nome: "Daniela", faixa: "Adulto"},
+    {num: 40, nome: "Rodrigo", faixa: "Adulto"},
+    {num: 41, nome: "Letícia", faixa: "Criança 7-10"},
+  ]},
+  "43-sandra": {responsavel: "Sandra", membros: [
+    {num: 42, nome: "Ramiro", faixa: "Adulto"},
+    {num: 43, nome: "Sandra", faixa: "Adulto"},
+  ]},
+  "45-marcia": {responsavel: "Márcia", membros: [
+    {num: 44, nome: "Joaquim", faixa: "Adulto"},
+    {num: 45, nome: "Márcia", faixa: "Adulto"},
+  ]},
+  "46-diogo": {responsavel: "Diogo", membros: [
+    {num: 46, nome: "Diogo", faixa: "Adulto"},
+    {num: 47, nome: "Patrícia", faixa: "Adulto"},
+    {num: 48, nome: "Maria Clara", faixa: "Criança 7-10"},
+    {num: 49, nome: "Eduardo", faixa: "Criança 7-10"},
+  ]},
+  "47-patricia": {responsavel: "Patrícia", membros: [
+    {num: 46, nome: "Diogo", faixa: "Adulto"},
+    {num: 47, nome: "Patrícia", faixa: "Adulto"},
+    {num: 48, nome: "Maria Clara", faixa: "Criança 7-10"},
+    {num: 49, nome: "Eduardo", faixa: "Criança 7-10"},
+  ]},
+  "50-tiago": {responsavel: "Tiago", membros: [
+    {num: 50, nome: "Tiago", faixa: "Adulto"},
+    {num: 51, nome: "Leda", faixa: "Adulto"},
+    {num: 52, nome: "Helena", faixa: "Criança 7-10"},
+    {num: 53, nome: "Pedro", faixa: "Criança até 6"},
+  ]},
+  "51-leda": {responsavel: "Leda", membros: [
+    {num: 50, nome: "Tiago", faixa: "Adulto"},
+    {num: 51, nome: "Leda", faixa: "Adulto"},
+    {num: 52, nome: "Helena", faixa: "Criança 7-10"},
+    {num: 53, nome: "Pedro", faixa: "Criança até 6"},
+  ]},
+  "54-rafael": {responsavel: "Rafael", membros: [
+    {num: 54, nome: "Rafael", faixa: "Adulto"},
+    {num: 55, nome: "Fernanda", faixa: "Adulto"},
+  ]},
+  "55-fernanda": {responsavel: "Fernanda", membros: [
+    {num: 54, nome: "Rafael", faixa: "Adulto"},
+    {num: 55, nome: "Fernanda", faixa: "Adulto"},
+  ]},
+  "56-natalicio": {responsavel: "Natalício", membros: [
+    {num: 56, nome: "Natalício", faixa: "Adulto"},
+    {num: 57, nome: "Jacqueline", faixa: "Adulto"},
+  ]},
+  "57-jacqueline": {responsavel: "Jacqueline", membros: [
+    {num: 56, nome: "Natalício", faixa: "Adulto"},
+    {num: 57, nome: "Jacqueline", faixa: "Adulto"},
+  ]},
+  "58-camilla-cristina": {responsavel: "Camilla Cristina", membros: [
+    {num: 58, nome: "Camilla Cristina", faixa: "Adulto"},
+    {num: 59, nome: "Acompanhante", faixa: "Adulto"},
+  ]},
+  "61-mariana": {responsavel: "Mariana", membros: [
+    {num: 60, nome: "Fábio", faixa: "Adulto"},
+    {num: 61, nome: "Mariana", faixa: "Adulto"},
+  ]},
+  "60-fabio": {responsavel: "Fábio", membros: [
+    {num: 60, nome: "Fábio", faixa: "Adulto"},
+    {num: 61, nome: "Mariana", faixa: "Adulto"},
+  ]},
+  "63-sabrina": {responsavel: "Sabrina", membros: [
+    {num: 63, nome: "Sabrina", faixa: "Adulto"},
+    {num: 64, nome: "Rodrigo", faixa: "Adulto"},
+  ]},
+  "64-rodrigo": {responsavel: "Rodrigo", membros: [
+    {num: 63, nome: "Sabrina", faixa: "Adulto"},
+    {num: 64, nome: "Rodrigo", faixa: "Adulto"},
+  ]},
+  "65-herculano": {responsavel: "Herculano", membros: [
+    {num: 65, nome: "Herculano", faixa: "Adulto"},
+  ]},
+  "66-gleyci": {responsavel: "Gleyci", membros: [
+    {num: 66, nome: "Gleyci", faixa: "Adulto"},
+  ]},
+  "67-wendler": {responsavel: "Wendler", membros: [
+    {num: 67, nome: "Wendler", faixa: "Adulto"},
+    {num: 68, nome: "Acompanhante", faixa: "Adulto"},
+  ]},
+  "69-leticia": {responsavel: "Letícia", membros: [
+    {num: 69, nome: "Letícia", faixa: "Adulto"},
+    {num: 70, nome: "Yago", faixa: "Adulto"},
+  ]},
+  "70-yago": {responsavel: "Yago", membros: [
+    {num: 69, nome: "Letícia", faixa: "Adulto"},
+    {num: 70, nome: "Yago", faixa: "Adulto"},
+  ]},
+  "71-erik": {responsavel: "Erik", membros: [
+    {num: 71, nome: "Erik", faixa: "Adulto"},
+    {num: 72, nome: "Ana Adélia", faixa: "Adulto"},
+  ]},
+  "72-ana-adelia": {responsavel: "Ana Adélia", membros: [
+    {num: 71, nome: "Erik", faixa: "Adulto"},
+    {num: 72, nome: "Ana Adélia", faixa: "Adulto"},
+  ]},
+  "76-fernanda": {responsavel: "Fernanda Nardy", membros: [
+    {num: 76, nome: "Fernanda Nardy", faixa: "Adulto"},
+    {num: 77, nome: "Brito", faixa: "Adulto"},
+  ]},
+  "77-brito": {responsavel: "Brito", membros: [
+    {num: 76, nome: "Fernanda Nardy", faixa: "Adulto"},
+    {num: 77, nome: "Brito", faixa: "Adulto"},
+  ]},
+  "78-joao": {responsavel: "João", membros: [
+    {num: 78, nome: "João", faixa: "Adulto"},
+    {num: 79, nome: "Luis", faixa: "Adulto"},
+  ]},
+  "80-thayna": {responsavel: "Thayna", membros: [
+    {num: 80, nome: "Thayna", faixa: "Adulto"},
+    {num: 81, nome: "Junior", faixa: "Adulto"},
+  ]},
+  "81-junior": {responsavel: "Junior", membros: [
+    {num: 80, nome: "Thayna", faixa: "Adulto"},
+    {num: 81, nome: "Junior", faixa: "Adulto"},
+  ]},
+  "82-dennys": {responsavel: "Dennys", membros: [
+    {num: 82, nome: "Dennys", faixa: "Adulto"},
+    {num: 83, nome: "Katia", faixa: "Adulto"},
+  ]},
+  "83-katia": {responsavel: "Katia", membros: [
+    {num: 82, nome: "Dennys", faixa: "Adulto"},
+    {num: 83, nome: "Katia", faixa: "Adulto"},
+  ]},
+  "84-vilma": {responsavel: "Vilma", membros: [
+    {num: 84, nome: "Vilma", faixa: "Adulto"},
+  ]},
+  "85-junior": {responsavel: "Junior", membros: [
+    {num: 85, nome: "Junior", faixa: "Adulto"},
+    {num: 86, nome: "Josi", faixa: "Adulto"},
+  ]},
+  "86-josi": {responsavel: "Josi", membros: [
+    {num: 85, nome: "Junior", faixa: "Adulto"},
+    {num: 86, nome: "Josi", faixa: "Adulto"},
+  ]},
+  "94-valter": {responsavel: "Valter", membros: [
+    {num: 94, nome: "Valter", faixa: "Adulto"},
+    {num: 95, nome: "Anesia", faixa: "Adulto"},
+  ]},
+  "95-anesia": {responsavel: "Anesia", membros: [
+    {num: 94, nome: "Valter", faixa: "Adulto"},
+    {num: 95, nome: "Anesia", faixa: "Adulto"},
+  ]},
+  "96-tonico": {responsavel: "Tonico", membros: [
+    {num: 96, nome: "Tonico", faixa: "Adulto"},
+    {num: 97, nome: "Geni", faixa: "Adulto"},
+    {num: 98, nome: "Melissa", faixa: "Criança 7-10"},
+  ]},
+  "97-geni": {responsavel: "Geni", membros: [
+    {num: 96, nome: "Tonico", faixa: "Adulto"},
+    {num: 97, nome: "Geni", faixa: "Adulto"},
+    {num: 98, nome: "Melissa", faixa: "Criança 7-10"},
+  ]},
+  "99-maysa": {responsavel: "Maysa", membros: [
+    {num: 99, nome: "Maysa", faixa: "Adulto"},
+    {num: 100, nome: "Nilson", faixa: "Adulto"},
+    {num: 101, nome: "Rebeca", faixa: "Criança até 6"},
+  ]},
+  "100-nilson": {responsavel: "Nilson", membros: [
+    {num: 99, nome: "Maysa", faixa: "Adulto"},
+    {num: 100, nome: "Nilson", faixa: "Adulto"},
+    {num: 101, nome: "Rebeca", faixa: "Criança até 6"},
+  ]},
+  "102-mimi": {responsavel: "Mimi", membros: [
+    {num: 102, nome: "Mimi", faixa: "Adulto"},
+    {num: 103, nome: "Sueli", faixa: "Adulto"},
+  ]},
+  "103-sueli": {responsavel: "Sueli", membros: [
+    {num: 102, nome: "Mimi", faixa: "Adulto"},
+    {num: 103, nome: "Sueli", faixa: "Adulto"},
+  ]},
+  "104-juliana": {responsavel: "Juliana", membros: [
+    {num: 104, nome: "Juliana", faixa: "Adulto"},
+  ]},
+  "105-fernando": {responsavel: "Fernando", membros: [
+    {num: 105, nome: "Fernando", faixa: "Adulto"},
+    {num: 106, nome: "Hilana", faixa: "Adulto"},
+  ]},
+  "107-conceicao": {responsavel: "Conceição", membros: [
+    {num: 107, nome: "Conceição", faixa: "Adulto"},
+    {num: 108, nome: "Paulo", faixa: "Adulto"},
+  ]},
+  "114-carmen": {responsavel: "Carmen", membros: [
+    {num: 114, nome: "Carmen", faixa: "Adulto"},
+  ]},
+  "115-sandra": {responsavel: "Sandra", membros: [
+    {num: 115, nome: "Sandra", faixa: "Adulto"},
+  ]},
+  "116-lilian": {responsavel: "Lilian", membros: [
+    {num: 116, nome: "Lilian", faixa: "Adulto"},
+  ]},
+  "117-erick": {responsavel: "Erick", membros: [
+    {num: 117, nome: "Erick", faixa: "Adulto"},
+    {num: 118, nome: "Viviane", faixa: "Adulto"},
+    {num: 119, nome: "Cecília", faixa: "Criança até 6"},
+  ]},
+  "118-viviane": {responsavel: "Viviane", membros: [
+    {num: 117, nome: "Erick", faixa: "Adulto"},
+    {num: 118, nome: "Viviane", faixa: "Adulto"},
+    {num: 119, nome: "Cecília", faixa: "Criança até 6"},
+  ]},
+  "120-fernando-luis": {responsavel: "Fernando Luis", membros: [
+    {num: 120, nome: "Fernando Luis", faixa: "Adulto"},
+    {num: 121, nome: "Claudia", faixa: "Adulto"},
+  ]},
+  "121-claudia": {responsavel: "Claudia", membros: [
+    {num: 120, nome: "Fernando Luis", faixa: "Adulto"},
+    {num: 121, nome: "Claudia", faixa: "Adulto"},
+  ]},
+  "122-diego": {responsavel: "Diego", membros: [
+    {num: 122, nome: "Diego", faixa: "Adulto"},
+    {num: 123, nome: "Karen", faixa: "Adulto"},
+    {num: 124, nome: "Heitor", faixa: "Criança 7-10"},
+    {num: 125, nome: "Victor", faixa: "Criança 7-10"},
+  ]},
+  "123-karen": {responsavel: "Karen", membros: [
+    {num: 122, nome: "Diego", faixa: "Adulto"},
+    {num: 123, nome: "Karen", faixa: "Adulto"},
+    {num: 124, nome: "Heitor", faixa: "Criança 7-10"},
+    {num: 125, nome: "Victor", faixa: "Criança 7-10"},
+  ]},
+  "126-tiago": {responsavel: "Tiago", membros: [
+    {num: 126, nome: "Tiago", faixa: "Adulto"},
+    {num: 127, nome: "Acompanhante", faixa: "Adulto"},
+    {num: 128, nome: "Tia Petitia", faixa: "Adulto"},
+  ]},
+  "130-adriana": {responsavel: "Adriana", membros: [
+    {num: 129, nome: "Ronaldo", faixa: "Adulto"},
+    {num: 130, nome: "Adriana", faixa: "Adulto"},
+    {num: 131, nome: "Paulo", faixa: "Adulto"},
+  ]},
+  "132-bruna": {responsavel: "Bruna", membros: [
+    {num: 132, nome: "Bruna", faixa: "Adulto"},
+    {num: 133, nome: "Renato", faixa: "Adulto"},
+  ]},
+  "134-fabiola": {responsavel: "Fabiola", membros: [
+    {num: 134, nome: "Fabiola", faixa: "Adulto"},
+  ]},
+  "135-marco": {responsavel: "Marco", membros: [
+    {num: 135, nome: "Marco", faixa: "Adulto"},
+    {num: 136, nome: "Daniela", faixa: "Adulto"},
+    {num: 137, nome: "Sofia", faixa: "Criança até 6"},
+    {num: 138, nome: "Arthur", faixa: "Criança até 6"},
+  ]},
+  "136-daniela": {responsavel: "Daniela", membros: [
+    {num: 135, nome: "Marco", faixa: "Adulto"},
+    {num: 136, nome: "Daniela", faixa: "Adulto"},
+    {num: 137, nome: "Sofia", faixa: "Criança até 6"},
+    {num: 138, nome: "Arthur", faixa: "Criança até 6"},
+  ]},
+  "141-tatiana": {responsavel: "Tatiana", membros: [
+    {num: 141, nome: "Tatiana", faixa: "Adulto"},
+    {num: 142, nome: "Acompanhante", faixa: "Adulto"},
+  ]},
+  "143-katia": {responsavel: "Katia", membros: [
+    {num: 143, nome: "Katia", faixa: "Adulto"},
+    {num: 144, nome: "Rogério", faixa: "Adulto"},
+  ]},
+  "145-eryka": {responsavel: "Eryka", membros: [
+    {num: 145, nome: "Eryka", faixa: "Adulto"},
+    {num: 146, nome: "Acompanhante", faixa: "Adulto"},
+  ]},
+  "147-rafael": {responsavel: "Rafael", membros: [
+    {num: 147, nome: "Rafael", faixa: "Adulto"},
+    {num: 148, nome: "Acompanhante", faixa: "Adulto"},
+  ]},
+  "149-wilson": {responsavel: "Wilson", membros: [
+    {num: 149, nome: "Wilson", faixa: "Adulto"},
+    {num: 150, nome: "Karine", faixa: "Adulto"},
+  ]},
+  "151-elaine": {responsavel: "Elaine", membros: [
+    {num: 151, nome: "Elaine", faixa: "Adulto"},
+    {num: 153, nome: "Clécio", faixa: "Adulto"},
+  ]},
+  "152-asfora": {responsavel: "Asfora", membros: [
+    {num: 152, nome: "Asfora", faixa: "Adulto"},
+  ]},
+  "154-liceria": {responsavel: "Licéria", membros: [
+    {num: 154, nome: "Licéria", faixa: "Adulto"},
+  ]},
+};
 
-    const grupos = {};
-
-    rows.forEach(row => {
-      const get = (label) => {
-        const i = cols.indexOf(label);
-        return i >= 0 && row.c[i] && row.c[i].v != null ? String(row.c[i].v).trim() : "";
-      };
-
-      const convidado = get("convidado");
-      if (convidado !== "Sim") return;
-
-      const nome = get("nome");
-      const faixa = get("faixa") || "Adulto";
-      const num = parseInt(get("num")) || 0;
-
-      ["confirma_por","confirma_por_2","confirma_por_3"].forEach(cp => {
-        const val = get(cp);
-        if (!val) return;
-        const chave = slugify(val);
-        if (!grupos[chave]) grupos[chave] = { responsavel: "", membros: [] };
-        grupos[chave].membros.push({ num, nome, faixa });
-      });
-
-      // Definir responsável pelo codigo
-      const codigo = get("codigo");
-      if (codigo) {
-        const chave = slugify(codigo);
-        if (grupos[chave]) grupos[chave].responsavel = nome;
-      }
-    });
-
-    return grupos;
-  } catch(e) {
-    console.error("Erro ao carregar planilha:", e);
-    return null;
-  }
+function carregarGrupos() {
+  return Promise.resolve(grupos);
 }
 
-async function init() {
-  // Mostrar loading
-  document.getElementById("card-confirmacao").innerHTML = `
-    <div style="padding:2rem;text-align:center;">
-      <div style="font-size:2rem;margin-bottom:1rem;">⏳</div>
-      <p style="color:#666;font-size:14px;">Carregando informações...</p>
-    </div>`;
+function mostrarErro(msg) {
+  document.getElementById("card-confirmacao").innerHTML =
+    "<div style=\"padding:2rem;text-align:center;\">" +
+    "<div style=\"font-size:3rem;margin-bottom:1rem;\">&#128533;</div>" +
+    "<h2 style=\"font-family:Playfair Display,serif;color:#1B4332;margin-bottom:0.5rem;\">" + msg + "</h2>" +
+    "<p style=\"color:#666;font-size:14px;\">Entre em contato com Nauber.</p>" +
+    "</div>";
+}
 
-  const grupos = await carregarGrupos();
-
-  const params = new URLSearchParams(window.location.search);
-  const chave = slugify(params.get("grupo") || "");
-  const grupo = grupos && grupos[chave];
-
-  if (!grupo) {
-    document.getElementById("card-confirmacao").innerHTML =
-      '<div style="padding:2rem;text-align:center;">' +
-      '<div style="font-size:3rem;margin-bottom:1rem;">&#128533;</div>' +
-      '<h2 style="font-family:Playfair Display,serif;color:#1B4332;margin-bottom:0.5rem;">Link inv&aacute;lido</h2>' +
-      '<p style="color:#666;font-size:14px;">Este link n&atilde;o &eacute; v&aacute;lido.<br>Entre em contato com Nauber.</p>' +
-      '</div>';
-    return;
-  }
-
-  // Restaurar card original
-  document.getElementById("card-confirmacao").innerHTML = `
-    <div class="card-header">
-      <div class="avatar" id="avatar-iniciais">${iniciais(grupo.responsavel)}</div>
-      <div class="card-header-text">
-        <div class="saudacao">Confirmar presença</div>
-        <div class="responsavel">${grupo.responsavel}</div>
-      </div>
-    </div>
-    <div class="card-body">
-      <p class="instrucao">${grupo.membros.length === 1 ? "Você vai comparecer à festa?" : "Confirme a presença de cada pessoa do seu grupo:"}</p>
-      <div id="lista-convidados"></div>
-      <button class="btn-confirmar" onclick="confirmar(currentGrupo, '${chave}')">Confirmar presenças</button>
-    </div>
-    <div class="sucesso" id="tela-sucesso">
-      <div class="sucesso-icone">🎉</div>
-      <h2>Confirmado!</h2>
-      <p>Sua presença foi registrada com sucesso.<br>Mal podemos esperar para celebrar juntos!</p>
-    </div>`;
-
+function renderGrupo(grupo, chave) {
   window.currentGrupo = grupo;
+  var html = "<div class=\"card-header\">" +
+    "<div class=\"avatar\">" + iniciais(grupo.responsavel) + "</div>" +
+    "<div class=\"card-header-text\">" +
+    "<div class=\"saudacao\">Confirmar presen\u00e7a</div>" +
+    "<div class=\"responsavel\">" + grupo.responsavel + "</div>" +
+    "</div></div>" +
+    "<div class=\"card-body\">" +
+    "<p class=\"instrucao\">" + (grupo.membros.length === 1 ? "Voc\u00ea vai comparecer \u00e0 festa?" : "Confirme a presen\u00e7a de cada pessoa do seu grupo:") + "</p>" +
+    "<div id=\"lista-convidados\"></div>" +
+    "<button class=\"btn-confirmar\" id=\"btn-confirmar\">CONFIRMAR PRESEN\u00c7AS</button>" +
+    "</div>" +
+    "<div class=\"sucesso\" id=\"tela-sucesso\">" +
+    "<div class=\"sucesso-icone\">&#127881;</div>" +
+    "<h2>Confirmado!</h2>" +
+    "<p>Sua presen\u00e7a foi registrada.<br>Mal podemos esperar para celebrar juntos!</p>" +
+    "</div>";
+  document.getElementById("card-confirmacao").innerHTML = html;
 
-  const lista = document.getElementById("lista-convidados");
-  grupo.membros.forEach(m => {
-    const fx = faixaLabel(m.faixa);
-    const isAcomp = m.nome.toLowerCase().includes("acompanhante");
-    lista.innerHTML += `
-      <div class="convidado-row">
-        <div class="convidado-info" style="flex:1;">
-          <div class="convidado-nome">${m.nome}</div>
-          ${fx ? `<div class="convidado-faixa">${fx}</div>` : ""}
-          ${isAcomp ? `<input type="text" class="input-nome" id="nome_${m.num}" placeholder="Digite o nome do(a) acompanhante" />` : ""}
-        </div>
-        <div class="toggle-group" style="flex-shrink:0;">
-          <input type="radio" name="resp_${m.num}" id="sim_${m.num}" value="sim">
-          <label for="sim_${m.num}">Sim</label>
-          <input type="radio" name="resp_${m.num}" id="nao_${m.num}" value="nao">
-          <label for="nao_${m.num}">Não</label>
-        </div>
-      </div>`;
+  var lista = document.getElementById("lista-convidados");
+  grupo.membros.forEach(function(m) {
+    var fx = faixaLabel(m.faixa);
+    var isAcomp = m.nome.toLowerCase().indexOf("acompanhante") >= 0;
+    var row = "<div class=\"convidado-row\">" +
+      "<div class=\"convidado-info\" style=\"flex:1;\">" +
+      "<div class=\"convidado-nome\">" + m.nome + "</div>";
+    if (fx) row += "<div class=\"convidado-faixa\">" + fx + "</div>";
+    if (isAcomp) row += "<input type=\"text\" class=\"input-nome\" id=\"nome_" + m.num + "\" placeholder=\"Digite o nome do(a) acompanhante\" />";
+    row += "</div><div class=\"toggle-group\" style=\"flex-shrink:0;\">" +
+      "<input type=\"radio\" name=\"resp_" + m.num + "\" id=\"sim_" + m.num + "\" value=\"sim\">" +
+      "<label for=\"sim_" + m.num + "\">Sim</label>" +
+      "<input type=\"radio\" name=\"resp_" + m.num + "\" id=\"nao_" + m.num + "\" value=\"nao\">" +
+      "<label for=\"nao_" + m.num + "\">N\u00e3o</label>" +
+      "</div></div>";
+    lista.innerHTML += row;
   });
+
+  document.getElementById("btn-confirmar").onclick = function() { confirmar(chave); };
 }
 
-async function confirmar(grupo, chave) {
-  const respostas = grupo.membros.map(m => {
-    const sel = document.querySelector(`input[name="resp_${m.num}"]:checked`);
-    const isAcomp = m.nome.toLowerCase().includes("acompanhante");
-    const nomeInput = isAcomp ? document.getElementById(`nome_${m.num}`) : null;
-    const nomeAcomp = nomeInput ? nomeInput.value.trim() : "";
+function confirmar(chave) {
+  var grupo = window.currentGrupo;
+  var respostas = grupo.membros.map(function(m) {
+    var sel = document.querySelector("input[name=\"resp_" + m.num + "\"]:checked");
+    var isAcomp = m.nome.toLowerCase().indexOf("acompanhante") >= 0;
+    var nomeInput = isAcomp ? document.getElementById("nome_" + m.num) : null;
+    var nomeAcomp = nomeInput ? nomeInput.value.trim() : "";
     return { num: m.num, nome: m.nome, nomeAcompanhante: nomeAcomp, resposta: sel ? sel.value : null };
   });
 
-  const naorespondidos = respostas.filter(r => !r.resposta);
-  if (naorespondidos.length > 0) {
-    alert(`Por favor, responda para: ${naorespondidos.map(r => r.nome).join(", ")}`);
+  var naoResp = respostas.filter(function(r) { return !r.resposta; });
+  if (naoResp.length > 0) {
+    alert("Por favor, responda para: " + naoResp.map(function(r) { return r.nome; }).join(", "));
     return;
   }
-
-  for (const r of respostas) {
-    if (r.resposta === "sim" && r.nome.toLowerCase().includes("acompanhante") && !r.nomeAcompanhante) {
-      alert("Por favor, informe o nome do(a) acompanhante antes de confirmar.");
+  for (var i = 0; i < respostas.length; i++) {
+    var r = respostas[i];
+    if (r.resposta === "sim" && r.nome.toLowerCase().indexOf("acompanhante") >= 0 && !r.nomeAcompanhante) {
+      alert("Por favor, informe o nome do(a) acompanhante.");
       return;
     }
   }
 
-  const btn = document.querySelector(".btn-confirmar");
+  var btn = document.getElementById("btn-confirmar");
   btn.textContent = "Enviando...";
   btn.disabled = true;
 
-  const payload = {
-    responsavel: grupo.responsavel,
-    grupo: chave,
-    timestamp: new Date().toISOString(),
-    respostas: respostas
-  };
-
-  try {
-    await fetch(WEBHOOK, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    });
-  } catch(e) {
-    console.error("Erro ao enviar:", e);
-  }
-
-  document.getElementById("lista-convidados").style.display = "none";
-  btn.style.display = "none";
-  document.querySelector(".instrucao").style.display = "none";
-  document.getElementById("tela-sucesso").style.display = "block";
+  fetch(WEBHOOK, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ responsavel: grupo.responsavel, grupo: chave, timestamp: new Date().toISOString(), respostas: respostas })
+  }).catch(function(e) { console.error(e); }).finally(function() {
+    document.getElementById("lista-convidados").style.display = "none";
+    btn.style.display = "none";
+    document.querySelector(".instrucao").style.display = "none";
+    document.getElementById("tela-sucesso").style.display = "block";
+  });
 }
 
-// Iniciar ao carregar
-init();
+carregarGrupos().then(function(grupos) {
+  var params = new URLSearchParams(window.location.search);
+  var chave = slugify(params.get("grupo") || "");
+  var grupo = grupos[chave];
+  if (!grupo) { mostrarErro("Link inv\u00e1lido"); return; }
+  renderGrupo(grupo, chave);
+}).catch(function(e) {
+  console.error(e);
+  mostrarErro("Erro ao carregar");
+});
 </script>
 </body>
 </html>
